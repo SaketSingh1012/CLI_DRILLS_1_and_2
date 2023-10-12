@@ -1,0 +1,72 @@
+1)Create the following directory structure. (Create empty files where necessary)
+
+I have created a directory named hello using "mkdir" command
+To created more directories inside it, first I have gone inside the directory hello using "cd" command and after that the "mkdir" command to make directories
+To create .txt or .log files, I have used "touch" command
+To go back to the parent directory I have used "cd .." command
+
+root@DESKTOP-4O24FAG:~# mkdir hello
+root@DESKTOP-4O24FAG:~# cd hello
+root@DESKTOP-4O24FAG:~/hello# mkdir five
+root@DESKTOP-4O24FAG:~/hello# mkdir one
+root@DESKTOP-4O24FAG:~/hello# cd five
+root@DESKTOP-4O24FAG:~/hello/five# mkdir six
+root@DESKTOP-4O24FAG:~/hello/five# cd six
+root@DESKTOP-4O24FAG:~/hello/five/six# touch c.txt
+root@DESKTOP-4O24FAG:~/hello/five/six# mkdir seven
+root@DESKTOP-4O24FAG:~/hello/five/six# cd seven
+root@DESKTOP-4O24FAG:~/hello/five/six/seven# touch error.log
+root@DESKTOP-4O24FAG:~/hello/five/six/seven# cd ../../..
+root@DESKTOP-4O24FAG:~/hello# cd one
+root@DESKTOP-4O24FAG:~/hello/one# touch a.txt
+root@DESKTOP-4O24FAG:~/hello/one# touch b.txt
+root@DESKTOP-4O24FAG:~/hello/one# mkdir two
+root@DESKTOP-4O24FAG:~/hello/one# cd two
+root@DESKTOP-4O24FAG:~/hello/one/two# touch d.txt
+root@DESKTOP-4O24FAG:~/hello/one/two# mkdir three
+root@DESKTOP-4O24FAG:~/hello/one/two# cd three
+root@DESKTOP-4O24FAG:~/hello/one/two/three# touch e.txt
+root@DESKTOP-4O24FAG:~/hello/one/two/three# mkdir four
+root@DESKTOP-4O24FAG:~/hello/one/two/three# cd four
+root@DESKTOP-4O24FAG:~/hello/one/two/three/four# touch access.log
+root@DESKTOP-4O24FAG:~/hello/one/two/three/four# cd ../../../../..
+
+
+2)Delete all the files having the .log extension
+
+To delete all the files having file extension .log
+I have used "find path to directory -type f -name "*.log" -exec rm -f {} \;" in which in place of path to directory I have written hello which is my directory in which I want to delete all the .log file extension. This command will search throught the hello directories and it's subdirectories and delete all the files having extension .log . 
+ 
+root@DESKTOP-4O24FAG:~# find hello -type f -name "*.log" -exec rm -f {} \;
+
+
+3)Add the following content to a.txt
+
+To add the text content inside a file, I have used "nano" command to write text into the file.
+
+root@DESKTOP-4O24FAG:~# nano a.txt
+
+
+4)Delete the directory named five
+
+To delete the directory named file , first I have gone into it's parent directory which is five then I have used "rm -r" command to delete non-empty directory
+
+root@DESKTOP-4O24FAG:~# cd hello
+root@DESKTOP-4O24FAG:~/hello# rm -r five
+
+
+5)Rename the one directory to uno
+
+To rename the file, first move into it's parent directory and then I have used "mv" command to rename the direcory name.
+The "mv" command not only moves files and directories but also allows you to rename them.
+
+root@DESKTOP-4O24FAG:~/hello# mv one uno
+
+
+6)Move a.txt to the two directory
+
+To move a file or a directory from one directory to another , first I have gone into the parent directory of file a.txt and then I have used "mv" command to move the file to two.txt
+
+root@DESKTOP-4O24FAG:~/hello# cd uno
+root@DESKTOP-4O24FAG:~/hello/uno# mv a.txt two/
+
